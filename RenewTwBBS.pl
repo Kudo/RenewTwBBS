@@ -50,9 +50,9 @@ sub main() {
 
     $mech->get($twbbsURL . '?q=bbs_renew');
     
-    while ((my $form = $mech->form_with_fields({ extend_confirm => "1" }))) {
+    while ((my $form = $mech->form_with_fields('extend_confirm'))) {
 	printf("To renew: %s.%s\n", $form->value('ext_host'), $form->value('main_dn'));
-	$form->click();
+	$mech->submit_form();
     }
 }
 
