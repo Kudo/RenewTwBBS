@@ -36,6 +36,8 @@ sub main() {
 	quiet => 1,
     );
 
+    $mech->agent_alias('Windows IE 6');
+
     $mech->get($twbbsURL);
 
     $mech->submit_form(
